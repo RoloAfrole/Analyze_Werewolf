@@ -141,16 +141,16 @@ RoleClassDict = {"Human": Human, "Werewolf": Werewolf, "Prophet": Prophet, "Knig
 
 class MainFrame(object):
     """docstring for MainFrame"""
-    def __init__(self, MenberSettingDict):
-        self.MenberSettingDict = MenberSettingDict
+    def __init__(self, MemberSettingDict):
+        self.MemberSettingDict = MemberSettingDict
         self.CharaList = []
         self.PhaseList = []
 
     def GeneChara(self):
         count = 0
         for role in RoleTuple:
-            if self.MenberSettingDict[role] > 0:
-                for x in range(self.MenberSettingDict[role]):
+            if self.MemberSettingDict[role] > 0:
+                for x in range(self.MemberSettingDict[role]):
                     self.CharaList.append(RoleClassDict[role](count, "{0}{1}".format(role, x)))
                     count += 1
 
@@ -162,14 +162,14 @@ class MainFrame(object):
 
 
 if __name__ == '__main__':
-    MenberNum = [5, 2, 1, 1, 0, 0, 0, 0, 0]
-    MenberSettingDict = {k: v for k, v in zip(RoleTuple, MenberNum)}
-    print(MenberSettingDict)
+    MemberNum = [5, 2, 1, 1, 0, 0, 0, 0, 0]
+    MemberSettingDict = {k: v for k, v in zip(RoleTuple, MemberNum)}
+    print(MemberSettingDict)
     print(MainFrame)
     b = RoleClassDict["Human"](1, "name")
     print(b.GetRole())
-    print(range(MenberSettingDict["Human"]))
-    a = MainFrame(MenberSettingDict)
+    print(range(MemberSettingDict["Human"]))
+    a = MainFrame(MemberSettingDict)
     a.GeneChara()
     print(a.CharaList)
     for x in a.CharaList:

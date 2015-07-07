@@ -1,1 +1,1 @@
-# Analyze_Werewolf >> README.md
+# Analyze_Werewolf
